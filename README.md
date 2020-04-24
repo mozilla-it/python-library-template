@@ -32,7 +32,7 @@ You should get the following response after installing pre-commit:
 Run the following command where you installed pre-commit.
 * `pre-commit run --all-files`
 
-### Exiting Pre-commit
+### Exiting Pipenv Shell
 
 Run the following command to exit `pipenv shell` while in a shell.
 * `exit`
