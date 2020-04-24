@@ -7,10 +7,10 @@ A github repo template with some minimal best practices
 
 ### Pipenv Setup
 
-Install ALL env dependencies of the Pipfile in the current directory:
+Install all regular env dependencies of the Pipfile in the current directory:
 * `pipenv install`
 
-Install DEV env dependencies of the Pipfile in the current directory:
+Install ALL deps including DEV env dependencies of the Pipfile in the current directory:
 * `pipenv install -dev`
 
 Opens shell with corresponding dependencies to the pipfile(.lock) in the directory that you make the call.
