@@ -8,6 +8,8 @@ detect-secrets = "*"
 
 [packages]
 pre-commit = "*"
+behave = "*"
+jinja2 = "*"
 
 [requires]
 python_version = "3.7"
