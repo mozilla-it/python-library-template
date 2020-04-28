@@ -5,11 +5,11 @@ verify_ssl = true
 
 [dev-packages]
 detect-secrets = "*"
-
-[packages]
 pre-commit = "*"
 behave = "*"
 jinja2 = "*"
+
+[packages]
 
 [requires]
 python_version = "3.7"

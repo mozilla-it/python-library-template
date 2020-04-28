@@ -7,7 +7,7 @@ Install all regular env dependencies of the Pipfile in the current directory:
 * `pipenv install`
 
 Install ALL deps including DEV env dependencies of the Pipfile in the current directory:
-* `pipenv install -dev`
+* `pipenv install --dev`
 
 Opens shell with corresponding dependencies to the pipfile(.lock) in the directory that you make the call.
 * `pipenv shell`
