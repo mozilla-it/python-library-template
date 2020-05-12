@@ -8,8 +8,10 @@ detect-secrets = "*"
 pre-commit = "*"
 behave = "*"
 jinja2 = "*"
+tox = "*"
 
 [packages]
+
 
 [requires]
 python_version = "3.7"

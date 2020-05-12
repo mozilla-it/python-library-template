@@ -43,5 +43,7 @@ class BddExampleSteps(ParentStep):
             value = row["value"]
             if "num" in key:
                 value = float(value)
-            assert key in self.result.keys(), f'The key was not found:{key}'
-            assert self.result[key] == value, f'The key was not associated with the expected value:{key}'
+            assert key in self.result.keys(), f"The key was not found:{key}"
+            assert (
+                self.result[key] == value
+            ), f"The key was not associated with the expected value:{key}"

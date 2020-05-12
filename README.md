@@ -5,9 +5,9 @@ A github repo template using python3 with:
  - Python package control through **Pipenv**
  - **Pre-commit** for detecting secrets, typing, linting (Detect-Secrets,Mypy, Black)
  - ...
- 
 
-## Index 
+
+## Index
 
 This template repo starts with some examples:
 * [View All Docs](./docs/)

@@ -12,12 +12,7 @@ repos:
           '--indent', '4',
           '--no-sort-keys',
         ]
-      #    -   id: requirements-txt-fixer
       - id: trailing-whitespace
-  #-   repo: meta
-  #    hooks:
-  #    -   id: check-hooks-apply
-  #    -   id: check-useless-excludes
   - repo: https://github.com/pre-commit/mirrors-pylint
     rev: v1.9.1
     hooks:

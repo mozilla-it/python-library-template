@@ -6,7 +6,6 @@ from behave import given
 
 
 class ParentStep(unittest.TestCase):
-
     @given("a path to our resources {path}")
     def path_to_resources_step(self, path: str):
         os.environ["TEST_PATH"] = path
