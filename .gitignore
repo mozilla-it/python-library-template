@@ -2,3 +2,5 @@
 .tox/
 .mypy_cache/
 *pyc
+*.egg-info/
+

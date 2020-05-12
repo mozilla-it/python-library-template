@@ -4,5 +4,5 @@ LABEL maintainer="Bryan Sieber bsieber@mozilla.com"
 COPY . /workspace/.
 WORKDIR /workspace
 
-RUN pip3 install tox pre-commit
+RUN pip3 install tox
 RUN tox
