@@ -9,7 +9,7 @@ authors = [
     "Jorge Spiropulo <jspiropulo@mozilla.com"
 ]
 readme = "README.md"
-python = "^3.7"
+python = ">=3.7"
 homepage = "https://github.com/mozilla-it/python-library-template"
 repository = "https://github.com/mozilla-it/python-library-template"
 documentation = "https://mozilla-it.github.io/python-library-template"
