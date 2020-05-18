@@ -25,18 +25,6 @@ requires = [
 ]
 build-backend = "setuptools.build_meta"
 
-[scripts]
-poetry = "infer_pyproject.cli:main"
-
-################
-# Requirements #
-################
-[dependencies]
-Click = "^7.0"
-
-[dev-dependencies]
-black = { version = "^18.3-alpha.0", python = "^3.6" }
-
 ################
 #    Tools     #
 ################
@@ -46,31 +34,33 @@ black = { version = "^18.3-alpha.0", python = "^3.6" }
 legacy_tox_ini = """
 [tox]
 isolated_build = True
-skipsdist = False
-
+skipsdist = True
 envlist = py37
 
 [testenv]
-deps = pytest
-        behave
-        jinja2
-commands = behave tests/bdd
+deps = pipenv
+commands =  pipenv install --dev
+            pipenv run behave tests/bdd
+
+[testenv:setup-docs]
+deps = {[testenv]deps}
+commands =  pipenv install --dev
 
 [testenv:behave-docs]
-deps = pytest
-        behave
-        jinja2
-        sphinx
-commands = behave --dry-run --no-summary -q --format sphinx.steps -o docs/steps tests/bdd
-           sphinx-build -b html docs/steps html_docs/
+deps = {[testenv:setup-docs]deps}
+commands =  {[testenv:setup-docs]commands}
+            pipenv run behave --dry-run --no-summary -q --format sphinx.steps -o {toxworkdir}/.tmp/steps tests/bdd
+            #After configuring sphinx-build try removing this commented code
+            #pipenv run sphinx-build -b html {toxworkdir}/.tmp/steps auto_docs/html
 
 
 [testenv:docs]
+deps = {[testenv:setup-docs]deps}
 description = invoke sphinx-build to build the HTML docs
 basepython = python3.7
-deps = sphinx
-commands = sphinx-build -d "{toxworkdir}/docs_doctree" doc "{toxworkdir}/docs_out" --color -W -bhtml {posargs}
-           python -c '''import pathlib; print("documentation available under file://\\{0\\}".format(pathlib.Path(r"{toxworkdir}") / "docs_out" / "index.html"))'''
+commands =  {[testenv:setup-docs]commands}
+            #After configuring sphinx-build try removing this commented code
+            #pipenv run sphinx-build -d "{toxworkdir}/docs_doctree" doc "auto_docs/html" --color -W -bhtml {posargs}
 
 """
 

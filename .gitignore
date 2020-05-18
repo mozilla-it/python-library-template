@@ -4,3 +4,4 @@
 *pyc
 *.egg-info
 Pipfile.lock
+auto_docs/steps/*
