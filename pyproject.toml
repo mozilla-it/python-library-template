@@ -54,7 +54,7 @@ envlist = py37
 deps = pytest
         behave
         jinja2
-commands = behave --format=sphinx.steps tests/bdd
+commands = behave tests/bdd
 
 [testenv:behave-docs]
 deps = pytest
