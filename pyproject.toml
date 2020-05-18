@@ -1,0 +1,99 @@
+[project]
+name = "python-library-template"
+version = "0.1.0"
+description = "Template python repo with our proven approaches."
+authors = [
+    "Adam Frank <afrank@mozilla.com",
+    "Bryan Sieber <bsieber@mozilla.com>",
+    "Chris Valaas <cvalaas@mozilla.com",
+    "Jorge Spiropulo <jspiropulo@mozilla.com"
+]
+readme = "README.md"
+python = "^3.7"
+homepage = "https://github.com/mozilla-it/python-library-template"
+repository = "https://github.com/mozilla-it/python-library-template"
+documentation = "https://mozilla-it.github.io/python-library-template"
+
+classifiers = [
+    "Topic :: Software Development"
+]
+
+[build-system]
+requires = [
+    "setuptools >= 35.0.2",
+    "setuptools_scm >= 2.0.0, <3"
+]
+build-backend = "setuptools.build_meta"
+
+[scripts]
+poetry = "infer_pyproject.cli:main"
+
+################
+# Requirements #
+################
+[dependencies]
+Click = "^7.0"
+
+[dev-dependencies]
+black = { version = "^18.3-alpha.0", python = "^3.6" }
+
+################
+#    Tools     #
+################
+
+# Note: Tox.skipsdist: Defaults to False but can be toggled to true if issues arise with the lack of a setup.py
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+isolated_build = True
+skipsdist = False
+
+envlist = py37
+
+[testenv]
+deps = pytest
+        behave
+        jinja2
+commands = behave --format=sphinx.steps tests/bdd
+
+[testenv:behave-docs]
+deps = pytest
+        behave
+        jinja2
+        sphinx
+commands = behave --dry-run --no-summary -q --format sphinx.steps -o docs/steps tests/bdd
+           sphinx-build -b html docs/steps html_docs/
+
+
+[testenv:docs]
+description = invoke sphinx-build to build the HTML docs
+basepython = python3.7
+deps = sphinx
+commands = sphinx-build -d "{toxworkdir}/docs_doctree" doc "{toxworkdir}/docs_out" --color -W -bhtml {posargs}
+           python -c '''import pathlib; print("documentation available under file://\\{0\\}".format(pathlib.Path(r"{toxworkdir}") / "docs_out" / "index.html"))'''
+
+"""
+
+
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''

@@ -8,6 +8,7 @@ detect-secrets = "*"
 pre-commit = "*"
 behave = "*"
 jinja2 = "*"
+tox = "*"
 
 [packages]
 
