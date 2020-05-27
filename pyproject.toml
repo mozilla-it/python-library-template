@@ -3,10 +3,10 @@ name = "python-library-template"
 version = "0.1.0"
 description = "Template python repo with our proven approaches."
 authors = [
-    "Adam Frank <afrank@mozilla.com",
+    "Adam Frank <afrank@mozilla.com>",
     "Bryan Sieber <bsieber@mozilla.com>",
-    "Chris Valaas <cvalaas@mozilla.com",
-    "Jorge Spiropulo <jspiropulo@mozilla.com"
+    "Chris Valaas <cvalaas@mozilla.com>",
+    "Jorge Spiropulo <jspiropulo@mozilla.com>"
 ]
 readme = "README.md"
 python = ">=3.7"
