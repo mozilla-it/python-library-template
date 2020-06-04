@@ -1,8 +1,8 @@
 # python-library-template
 
 A github repo template using python3 with:
- - BDD testing strategies (using Behave and Gherkin)
- - Python package control through **Pipenv**
+ - BDD testing strategies (using Gherkin and Behave through Tox)
+ - Python package control through **poetry**
  - **Pre-commit** for detecting secrets, typing, linting (Detect-Secrets,Mypy, Black)
  - ...
 
@@ -20,7 +20,7 @@ The project is structured with the following in mind:
 
 - docs/
     - Documentation around the project
-- src/
+- project_template/
     - Operational source code exists here
 - tests/bdd/
     - BDD feature testing with Behave and Gherkin feature files
