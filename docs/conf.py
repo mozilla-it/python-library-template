@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = "template"
-copyright = "2020, Adam Frank <afrank@mozilla.com>"
-author = "Adam Frank <afrank@mozilla.com>"
+copyright = "2020, Enterprise Integration Platform <enterprise-integration-platform@mozilla.com>"
+author = "Enterprise Integration Platform <enterprise-integration-platform@mozilla.com>"
 
 # The short X.Y version
 version = "0.0.1"
