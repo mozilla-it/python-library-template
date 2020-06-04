@@ -3,7 +3,7 @@ requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
 
 [tool.poetry]
-name = "python-library-template"
+name = "project_template"
 version = "0.1.1"
 description = "Template python repo with our proven approaches."
 authors = [
