@@ -37,8 +37,8 @@ See Behave https://behave.readthedocs.io/en/latest/
 <hr/>
 
 ### How to run the tests:
-You can run the suite by shelling into pipenv:
->`pipenv shell`
+You can run the suite by shelling into poetry:
+>`poetry shell`
 
 And then running the installed behave with the folder path:
 >`behave tests/bdd/`
