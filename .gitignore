@@ -7,3 +7,4 @@ Pipfile.lock
 auto_docs/steps/*
 build
 .venv
+*.lock
