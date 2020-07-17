@@ -24,7 +24,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 # These packages are mandatory and form the core of this package’s distribution.
-python = ">=3.7"
+python = ">=3.7, <4"
 google-cloud-logging = "*"
 tox = "*"
 sphinx = "*"
