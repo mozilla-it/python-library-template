@@ -51,7 +51,7 @@ whitelist_externals =
 commands =
     coverage run --branch -m behave tests/bdd
     /bin/bash -c 'coverage run -a --branch -m unittest tests/unit/*py'
-    coverage report -m --fail-under 80
+    coverage report --omit "*/.tox/*,*/tests/*" -m --fail-under 80
     coverage html
 """
 
