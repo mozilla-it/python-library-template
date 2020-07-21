@@ -28,6 +28,7 @@ python = ">=3.7, <4"
 google-cloud-logging = "*"
 tox = "*"
 sphinx = "*"
+coverage = "^5.2"
 
 [tool.poetry.dev-dependencies]
 pre-commit = "*"
@@ -44,10 +45,14 @@ skipsdist =  True
 deps =
     behave
     jinja2
+    coverage
 whitelist_externals =
     poetry
 commands =
-    poetry run behave tests/bdd
+    coverage run --branch -m behave tests/bdd
+    /bin/bash -c 'coverage run -a --branch -m unittest tests/unit/*py'
+    coverage report -m --fail-under 80
+    coverage html
 """
 
 
